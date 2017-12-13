@@ -1,0 +1,1 @@
+nohup python3 main.py > nohup.log 2>&1 & echo $! > run.pid

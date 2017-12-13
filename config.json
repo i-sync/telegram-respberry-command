@@ -1,0 +1,7 @@
+{
+    "token": "39xxx6:AAxxxxxHMWsIxxxo",
+    "proxy": "http://127.0.0.1:8123",
+    "user_id": [376585058, ],
+    "command_list": ["start", "help"],
+    "des_path": "/home/pi/telegram"
+}
