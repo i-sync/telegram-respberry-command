@@ -28,7 +28,7 @@ def command_process(bot, update):
     logging.info(text)
     if text.startswith('/help') or text.startswith('/start'):
         custom_keyboard = [['bash run.sh status', 'bash run.sh start'], ['bash run.sh restart', 'bash run.sh stop']]
-        reply_keyboard_markup = telegram.ReplyKeyboardMarkup(custom_keyboard)
+        reply_keyboard_markup = telegram.ReplyKeyboardMarkup(custom_keyboard, resize_keyboard=True)
         bot.send_message(chat_id=update.message.chat_id, text= 'Please Select Command', reply_markup = reply_keyboard_markup)
     else:
         bot.send_message(chat_id= update.message.chat_id, text = 'sorry, i can\'t understand what\'s your mean...')
