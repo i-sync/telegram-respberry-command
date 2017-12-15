@@ -62,7 +62,10 @@ def text_process(bot, update):
         try:
             command = update.message.text.lower()
             res = process_command(command)
-            bot.send_message(chat_id= update.message.chat_id, text = res.stdout if res.returncode == 0 else res.stderr) 
+            message = res.stdout if res.returncode == 0 else res.stderr
+            if len(message) > 4096:
+                message ='{} ...'.format(message[:4092])
+            bot.send_message(chat_id= update.message.chat_id, text = message)
         except Exception as e:
             bot.send_message(chat_id = update.message.chat_id, text = str(e))
     else:
